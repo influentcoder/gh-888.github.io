@@ -4,6 +4,10 @@ title: About Me
 permalink: /about/
 ---
 
+## Download My Resume in PDF
+
+If you'd like, you can download my [single-page resume in PDF format](/assets/pdf/Guillaume Humbert - Resume.pdf).
+
 ## Professional Summary
 
 I'm Guillaume, an experienced Software Engineer specializing in the banking and finance industry, with a strong background in C++, Python, Javascript, and Java. Known for technical expertise, innovative solutions, and a pragmatic approach to complex problems.
@@ -20,7 +24,7 @@ I'm Guillaume, an experienced Software Engineer specializing in the banking and 
 
 *16/361,324 · Issued May 2, 2023*
 
-Inventor of a patented system for handling private information in untrusted environments; to be able to run analytics on the data without leaking it.
+Inventor of a system designed to enable the secure processing of sensitive data on insecure or third-party infrastructure. This ensures that private information, such as personally identifiable information (PII), material non-public information (MNPI) in the finance sector, or confidential medical records in the healthcare industry, remains protected during analytics operations. This patent represents a significant advancement in maintaining data confidentiality while leveraging external computational resources.
 
 [See Patent](https://patentcenter.uspto.gov/applications/16361324)
 
@@ -50,6 +54,10 @@ Singapore\
 
 **Role:** SecDB core platform developer - leading a team of 7 developers of different levels of seniority.
 
+**Achievements:**
+* Led the implementation of authentication and authorization on SecDB databases.
+
+**Background of SecDB:**
 SecDB is a risk anaytics platform for financial securities. The platform allow developers to use the Slang programming language to build applications for their users - who can be front office (traders, sales), middle/back office and many others like product control etc.
 
 As part of the SecDB core team, we are responsible to provide the tools, infrastructure, data stores, frameworks for our customers. Our customers are typically development teams aligned with specific businesses, like FX, commodities, rates etc.
