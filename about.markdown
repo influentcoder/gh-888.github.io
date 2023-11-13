@@ -6,7 +6,7 @@ permalink: /about/
 
 ## Download My Resume in PDF
 
-If you'd like, you can download my [single-page resume in PDF format](/assets/pdf/Guillaume Humbert - Resume.pdf).
+If you'd like, you can download my [single-page resume in PDF format](/assets/pdf/Guillaume Humbert - Resume.pdf){:target="_blank"}.
 
 ## Professional Summary
 
