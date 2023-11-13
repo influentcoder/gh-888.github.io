@@ -1,18 +1,162 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About Me
+permalink: /about
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## Backgound
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I'm Guillaume, I'm a software engineer and started my career in 2009. I've mostly worked in the banking / finance industry, and proficient with C++, Python, Javascript and Java.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+My strenghts are:
+* My technical expertise, problem solving abilities.
+* The ability to deliver projects, understand my users' needs, and stakeholder expectations.
+* I'm not a dogmatic programmer - I like pragmatic approaches and solutions.
+* My ability to coach and mentor junior programmers.
 
+## Contact Details
 
-[jekyll-organization]: https://github.com/jekyll
+* Email: guillaume@influentcoder.com
+* Tel: (on my PDF resume)
+* LinkedIn: [https://linkedin.com/in/guillaumehumbert](https://linkedin.com/in/guillaumehumbert)
+
+## Patents
+
+### Systems and Methods for Manipulation of Private Information on Untrusted Environments
+
+*16/361,324 · Issued May 2, 2023*
+
+[See Patent](https://patentcenter.uspto.gov/applications/16361324)
+
+## Work Experiences
+
+### Goldman Sachs
+
+*Executive Director\
+Singapore\
+2020 - Present*
+
+**Tech Stack**:
+* C++ (mainly)
+* [Slang](https://www.efinancialcareers.sg/news/2023/04/goldman-sachs-slang) - A proprietary, in-house built programming language, similar as Python in some aspects.
+* TDMS - A proprietary, in-house built no-sql database
+* [SecDB](https://www.goldmansachs.com/our-firm/history/moments/1993-secdb.html) - A proprietary, in-house built risk analytics platform for securities, which comprises of Slang & TDMS (and many other things).
+* Java, Python - relatively less in use than the rest.
+
+**Role:** SecDB core platform developer - leading a team of 7 developers of different levels of seniority.
+
+SecDB is a risk anaytics platform for financial securities. The platform allow developers to use the Slang programming language to build applications for their users - who can be front office (traders, sales), middle/back office and many others like product control etc.
+
+As part of the SecDB core team, we are responsible to provide the tools, infrastructure, data stores, frameworks for our customers. Our customers are typically development teams aligned with specific businesses, like FX, commodities, rates etc.
+
+A few examples of what we provide to our customers:
+* A programming language called Slang, heavily optimised towards building financial applications, such as trade booking applications, trade matching / reconciliation, PnL / risk calculation, "what-if" analysis, etc.
+* Extremely performant no-SQL data stores, heavily replicated and available, optimized to specifically store trade data (but can really store anything).
+* A very fast software development life-cycle (SDLC), which allows for hundreds and even thousands of daily code releases to production.
+* Various compute offerings, such as virtual machines, distributed compute engines, (internal and external) cloud compute.
+
+**Projects and Deliverables**
+
+The main project I am working on is to implement authentication and authorization on SecDB databases (called TDMS). Authentication and authorization are done on client applications of the database - which means that someone who understands the protocol to interact with the database can potentially bypass the controls. Or they could skip the control checks in client applications, voluntarily or not.
+
+Not completing this project would have a regulatory and reputational client impact.
+
+**Challenges**
+* Backwards compatibility: there are tens of thousands of applications using SecDB databases, with about 200 million lines of code. The controls we are implementing in the database should not break any existing application.
+* Scale: we are running about 5,000 database instances.
+* Performance: SecDB databases are in-memory databases - an average request time for an object is a few microseconds. We need to ensure that applying authorization checks do not bloat memory usage, or speed of execution.
+  * We implemented authoriztion checks as a separate service (i.e. process) that has extremely low latency and small memory footprint.
+
+### JP Morgan Chase
+
+*Vice President\
+Singapore\
+2014 - 2020*
+
+**Tech Stack**:
+* Python
+* Athena, a in-house built risk analytics platform, mostly written in Python and C++.
+
+**Role:** Athena developer, for the rates / fixed income & derivative businesses.
+
+**Customers:** Rates Front Office - specifically Asian Emerging Market trading desks, Middle Office, Product Control teams.
+
+**Projects and Deliverables**
+* Built trade booking & trade matching applications.
+* Developed features specific to Asian desks, e.g. bespoke trade booking flows, regional regulatory requirements, support for exotic products.
+* Provided first line support to front and middle office teams.
+* The new software we built on the Athena platform allowed to deprecate and shut down legacy software, especially a huge one that was written in Smalltalk, resulting in tens of millions of savings per year.
+
+**Challenges**
+* Implement bespoke features in a global platform.
+* Front office support can be stressful - bugs & issues need often immediate resolution.
+* Athena platform is huge, it's about 35 million lines of Python code, and about a thousand active developers - making changes to the core of the platform safely can be tricky.
+* Huge learning curve, as everything is built in-house.
+
+**Achievements:**
+* Recognized as a subject matter expert in Asia, and part of the technical leadership team.
+* Officially given the title of "Expert Engineer" (E2), which distinguishes the top 1.5% technologists in the firm.
+
+### Triquesta
+
+*Software Engineer\
+Singapore
+2012 - 2014*
+
+**Tech Stack**:
+* Java
+* Javascript
+
+**Role:** Java developer, then promoted to IT manager
+
+**Projects and Deliverables**
+* Built a commodities trading system, that is sold to global banks, such as Rabobank, Westpac, UniCredit.
+
+**Main Responsibilities**
+* Led a team of developers, reported to the CEO, and to client representatives.
+* Fully involved in development (Java), testing, release and production support.
+* Participated as the technical head during pre-sales meetings.
+
+**Challenges**
+* This was a relatively small firm at the time, and we had to do lots of things that are sometimes out of our comfort zone - which was a great learning experience.
+
+### Credit Agricole CIB
+
+*Production Engineer\
+Singapore\
+2011 - 2012*
+
+**Role:** Level 2 production support for all lines of business of the investment bank.
+
+**Main Responsibilities**
+* Automated most of manual production procedures and deployment, mostly in Bash, Perl, Python.
+* Acquired communication, negotiation / compromise skills, sense of urgency, experience on production monitoring technologies and best practices.
+
+**Challenges**
+* Huge learning curve, as we had to operate on many disparate technologies (various databases, programming langugages, scheduling systems, operating systems). It was a great learning experience from the operations side.
+
+### Société Nouvelle Electric Flux (SNEF)
+
+*Software Engineer\
+France\
+2009 - 2011*
+
+**Tech Stack**
+* Java
+* Javascript
+
+**Projects and Deliverables**
+* Built an internal customer relationship management, and an inventory management system.
+
+**Main Responsibilities**
+* Development, testing, production releases and support.
+
+## Education
+
+### Master's Degree, Computer Science
+
+*University of Paris X, Nanterre, France, 2009-2011*
+
+### Bachelor's Degree, Computer Science
+
+*University of Paris X, Nanterre, France, 2006-2009*
