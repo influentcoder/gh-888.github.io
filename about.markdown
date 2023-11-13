@@ -4,15 +4,9 @@ title: About Me
 permalink: /about/
 ---
 
-## Backgound
+## Professional Summary
 
-I'm Guillaume, I'm a software engineer and started my career in 2009. I've mostly worked in the banking / finance industry, and proficient with C++, Python, Javascript and Java.
-
-My strenghts are:
-* My technical expertise, problem solving abilities.
-* The ability to deliver projects, understand my users' needs, and stakeholder expectations.
-* I'm not a dogmatic programmer - I like pragmatic approaches and solutions.
-* My ability to coach and mentor junior programmers.
+I'm Guillaume, an experienced Software Engineer specializing in the banking and finance industry, with a strong background in C++, Python, Javascript, and Java. Known for technical expertise, innovative solutions, and a pragmatic approach to complex problems.
 
 ## Contact Details
 
@@ -26,7 +20,18 @@ My strenghts are:
 
 *16/361,324 · Issued May 2, 2023*
 
+Inventor of a patented system for handling private information in untrusted environments; to be able to run analytics on the data without leaking it.
+
 [See Patent](https://patentcenter.uspto.gov/applications/16361324)
+
+## Skills
+
+* **Programming Languages:** Proficient in C++, Python, JavaScript, and Java. Experienced in developing complex software solutions in these languages, particularly for the banking and finance industry.
+* **Problem Solving:** Proven ability to address and solve complex technical problems, often in high-pressure environments, leading to significant improvements in system performance and efficiency.
+* **Project Delivery:** Demonstrated success in delivering large-scale projects, meeting and exceeding stakeholder expectations. Skilled in managing project life cycles from conception to deployment.
+* **Team Leadership:** Experienced in leading and mentoring teams of developers, fostering a collaborative and productive work environment. Recognized for coaching junior programmers and enhancing team capabilities.
+* **Innovation:** Inventor of a patented system for manipulating private information in untrusted environments. Use innovative approaches to overcome technical challenges.
+* **Communication:** Effective communicator, capable of translating complex technical concepts to non-technical stakeholders. Proficient in negotiation and compromise.
 
 ## Work Experiences
 
@@ -57,7 +62,9 @@ A few examples of what we provide to our customers:
 
 **Projects and Deliverables**
 
-The main project I am working on is to implement authentication and authorization on SecDB databases (called TDMS). Authentication and authorization are done on client applications of the database - which means that someone who understands the protocol to interact with the database can potentially bypass the controls. Or they could skip the control checks in client applications, voluntarily or not.
+Led the implementation of authentication and authorization on SecDB databases, significantly enhancing data security and compliance, while maintaining system performance.
+
+Authentication and authorization are done on client applications of the database - which means that someone who understands the protocol to interact with the database can potentially bypass the controls. Or they could skip the control checks in client applications, voluntarily or not.
 
 Not completing this project would have a regulatory and reputational client impact.
 
