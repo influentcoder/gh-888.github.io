@@ -2,7 +2,7 @@
 layout: post
 title:  "Agile is Dead"
 date:   2023-11-16 00:00:00 +0800
-categories: agile
+categories: software
 ---
 
 There are mostly two opposing mainstream ways of building software. On one hand, we have the waterfall model, which is implemented by having long and sequential phases, such as requirements gathering, analysis, design, coding, testing and finally deployment and maintenance. I won't go too much into the details of it, but anyone who spent some time in the software development industry knows that is a terrible way to conduct a software project.
