@@ -1,6 +1,22 @@
+# Jekyll cache
 _site
-.sass-cache
 .jekyll-cache
-.jekyll-metadata
+
+# Bundle
 vendor
 .bundle/ruby
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode
+
+# Misc
+assets/js/dist
+

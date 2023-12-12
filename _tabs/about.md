@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About Me
-permalink: /about/
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 4
 ---
 
 ## Download My Resume in PDF
