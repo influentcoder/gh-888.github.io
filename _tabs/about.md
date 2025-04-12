@@ -6,11 +6,37 @@ order: 4
 
 ## Download My Resume in PDF
 
-If you'd like, you can download my [single-page resume in PDF format](/assets/pdf/Guillaume Humbert - Resume.pdf){:target="_blank"}.
+If you'd like, you can download my
+[single-page resume in PDF format](/assets/pdf/Guillaume Humbert - Resume.pdf){:target="_blank"}.
 
 ## Professional Summary
 
-I'm Guillaume, an experienced Software Engineer specializing in the banking and finance industry, with a strong background in C++, Python, Javascript, and Java. Known for technical expertise, innovative solutions, and a pragmatic approach to complex problems.
+I'm Guillaume, a software engineer with 16 years of experience building and
+scaling high-performance systems- primarily in the financial industry. I've
+worked across the full stack, from low-latency infrastructure and in-house
+databases to risk analytics platforms and container orchestration at massive
+scale.
+
+At JPMorgan and Goldman Sachs, I contributed to core systems like Athena and
+SecDB, supported front office trading desks, and led projects serving billions
+of requests per day. I’ve designed software used by some of the world’s largest
+banks, shut down legacy systems to save millions annually, and helped modernize
+infrastructure across critical platforms.
+
+I enjoy solving complex engineering challenges, especially those involving
+performance, scale, and architecture. I’ve worked in both large global teams
+and startup-style environments, led development efforts, and collaborated
+directly with traders, product managers, and client teams.
+
+Key strengths:
+* Distributed systems and platform engineering
+* Low-latency C++, Python, Go, and Java development
+* Technical leadership and cross-team collaboration
+* Deep understanding of the finance domain and trading desk workflows
+
+I'm driven by solving complex technical problems and delivering robust,
+scalable systems that make a meaningful impact on the business.
+
 
 ## Contact Details
 
@@ -22,20 +48,27 @@ I'm Guillaume, an experienced Software Engineer specializing in the banking and 
 
 ### Systems and Methods for Manipulation of Private Information on Untrusted Environments
 
-*16/361,324 · Issued May 2, 2023*
+*US11641274B2 · Issued May 2, 2023*
 
-Inventor of a system designed to enable the secure processing of sensitive data on insecure or third-party infrastructure. This ensures that private information, such as personally identifiable information (PII), material non-public information (MNPI) in the finance sector, or confidential medical records in the healthcare industry, remains protected during analytics operations. This patent represents a significant advancement in maintaining data confidentiality while leveraging external computational resources.
+Inventor of a system that enables the secure processing of sensitive data on
+untrusted or third-party infrastructure. The design allows organizations to
+perform analytics on confidential information—such as personally identifiable
+information (PII), material non-public information (MNPI), or medical
+records—without exposing the raw data. This patented approach helps preserve
+data confidentiality while leveraging external compute resources, bridging the
+gap between privacy and performance/cost in regulated environments.
 
-[See Patent](https://patentcenter.uspto.gov/applications/16361324)
+
+[See Patent](https://patents.google.com/patent/US11641274B2/en)
 
 ## Skills
 
-* **Programming Languages:** Proficient in C++, Python, JavaScript, and Java. Experienced in developing complex software solutions in these languages, particularly for the banking and finance industry.
-* **Problem Solving:** Proven ability to address and solve complex technical problems, often in high-pressure environments, leading to significant improvements in system performance and efficiency.
-* **Project Delivery:** Demonstrated success in delivering large-scale projects, meeting and exceeding stakeholder expectations. Skilled in managing project life cycles from conception to deployment.
-* **Team Leadership:** Experienced in leading and mentoring teams of developers, fostering a collaborative and productive work environment. Recognized for coaching junior programmers and enhancing team capabilities.
-* **Innovation:** Inventor of a patented system for manipulating private information in untrusted environments. Use innovative approaches to overcome technical challenges.
-* **Communication:** Effective communicator, capable of translating complex technical concepts to non-technical stakeholders. Proficient in negotiation and compromise.
+* **Programming Languages:** Proficient in C++, Python, Go, JavaScript, and Java, with extensive experience developing complex systems in the banking and finance domain.
+* **Problem Solving:** Strong analytical skills with a proven track record of resolving complex technical challenges under pressure, leading to measurable gains in systems performance and reliability.
+* **Project Delivery:** Successfully led and delivered large-scale software projects end to end, consistently meeting or exceeding stakeholder expectations across high-impact initiatives.
+* **Team Leadership:** Experienced in mentoring and leading development teams, fostering collaboration, and supporting skill growth. Recognized for coaching junior engineers and enhancing overall team performance.
+* **Innovation:** Inventor of a patented system enabling secure data processing in untrusted environments. Known for applying creative, pragmatic solutions to technically demanding problems.
+* **Communication:** Skilled at bridging technical and non-technical audiences. Adept at articulating complex ideas clearly and facilitating alignment through effective negotiation and stakeholder management.
 
 ## Work Experiences
 
@@ -45,42 +78,20 @@ Inventor of a system designed to enable the secure processing of sensitive data 
 Singapore\
 2020 - Present*
 
-**Tech Stack**:
-* C++ (mainly)
-* [Slang](https://www.efinancialcareers.sg/news/2023/04/goldman-sachs-slang) - A proprietary, in-house built programming language, similar as Python in some aspects.
-* TDMS - A proprietary, in-house built no-sql database
-* [SecDB](https://www.goldmansachs.com/our-firm/history/moments/1993-secdb.html) - A proprietary, in-house built risk analytics platform for securities, which comprises of Slang & TDMS (and many other things).
-* Java, Python - relatively less in use than the rest.
+**Technology stack:** C++, Python, Go, Java.
 
-**Role:** SecDB core platform developer - leading a team of 7 developers of different levels of seniority.
+**Project:** Container Software Distribution at Scale
 
-**Achievements:**
-* Led the implementation of authentication and authorization on SecDB databases.
+* Develop a new container software distribution system for the firm.
+* Design an architecture that has to scale to 100M+ containers/day and 200K+ containers/minute bursts.
 
-**Background of SecDB:**
-SecDB is a risk anaytics platform for financial securities. The platform allow developers to use the Slang programming language to build applications for their users - who can be front office (traders, sales), middle/back office and many others like product control etc.
+**Project:** SecDB, a cross business risk & PnL platform
 
-As part of the SecDB core team, we are responsible to provide the tools, infrastructure, data stores, frameworks for our customers. Our customers are typically development teams aligned with specific businesses, like FX, commodities, rates etc.
-
-A few examples of what we provide to our customers:
-* A programming language called Slang, heavily optimised towards building financial applications, such as trade booking applications, trade matching / reconciliation, PnL / risk calculation, "what-if" analysis, etc.
-* Extremely performant no-SQL data stores, heavily replicated and available, optimized to specifically store trade data (but can really store anything).
-* A very fast software development life-cycle (SDLC), which allows for hundreds and even thousands of daily code releases to production.
-* Various compute offerings, such as virtual machines, distributed compute engines, (internal and external) cloud compute.
-
-**Projects and Deliverables**
-
-Led the implementation of authentication and authorization on SecDB databases, significantly enhancing data security and compliance, while maintaining system performance.
-
-Authentication and authorization are done on client applications of the database - which means that someone who understands the protocol to interact with the database can potentially bypass the controls. Or they could skip the control checks in client applications, voluntarily or not.
-
-Not completing this project would have a regulatory and reputational client impact.
-
-**Challenges**
-* Backwards compatibility: there are tens of thousands of applications using SecDB databases, with about 200 million lines of code. The controls we are implementing in the database should not break any existing application.
-* Scale: we are running about 5,000 database instances.
-* Performance: SecDB databases are in-memory databases - an average request time for an object is a few microseconds. We need to ensure that applying authorization checks do not bloat memory usage, or speed of execution.
-  * We implemented authoriztion checks as a separate service (i.e. process) that has extremely low latency and small memory footprint.
+* Develop new features for SecDB in-house database, called TDMS, which is a high-performance object database built in C++.
+* Enhance the core of the database to perform authorization, which is currently done by client applications.
+* Design for scale (2B+ daily DB connections), microsecond-level latency, and backwards compatibility (200+ million of client lines of code using the DB).
+* Build an external service to perform authorization, with ultra-low latency and minimal memory footprint.
+* Develop the new generation of an in-house scheduler, which handles large volumes of workloads, with high availability and high performance characteristics.
 
 ### JP Morgan Chase
 
@@ -88,29 +99,32 @@ Not completing this project would have a regulatory and reputational client impa
 Singapore\
 2014 - 2020*
 
-**Tech Stack**:
+**Tech Stack:**
 * Python
-* Athena, a in-house built risk analytics platform, mostly written in Python and C++.
+* Athena – JPMorgan’s in-house risk & PnL analytics platform (35M+ lines of Python, 1,000+ developers)
 
-**Role:** Athena developer, for the rates / fixed income & derivative businesses.
+**Role:** Athena developer for the Rates / Fixed Income & Derivatives businesses, with a focus on Asian Emerging Markets.
 
-**Customers:** Rates Front Office - specifically Asian Emerging Market trading desks, Middle Office, Product Control teams.
+**Stakeholders:**
+* Rates Front Office (Asian trading desks)
+* Middle Office
+* Product Control teams
 
-**Projects and Deliverables**
-* Built trade booking & trade matching applications.
-* Developed features specific to Asian desks, e.g. bespoke trade booking flows, regional regulatory requirements, support for exotic products.
-* Provided first line support to front and middle office teams.
-* The new software we built on the Athena platform allowed to deprecate and shut down legacy software, especially a huge one that was written in Smalltalk, resulting in tens of millions of savings per year.
+**Projects & Deliverables:**
+* Built trade booking and trade matching applications tailored to regional desks
+* Developed bespoke features to meet local regulatory requirements, support exotic products and emerging markets specific workflows
+* Provided first-line support to front and middle office users
+* Played a key role in decommissioning a large legacy system (written in Smalltalk), resulting in multi-million dollar annual savings
 
-**Challenges**
-* Implement bespoke features in a global platform.
-* Front office support can be stressful - bugs & issues need often immediate resolution.
-* Athena platform is huge, it's about 35 million lines of Python code, and about a thousand active developers - making changes to the core of the platform safely can be tricky.
-* Huge learning curve, as everything is built in-house.
+**Challenges:**
+* Implementing bespoke features in a globally shared platform
+* Supporting front office users under high-pressure, time-sensitive conditions
+* Navigating a massive codebase (~35M lines of Python) and ensuring safety and quality in shared core components
+* Overcoming a steep learning curve in a in-house ecosystem
 
 **Achievements:**
-* Recognized as a subject matter expert in Asia, and part of the technical leadership team.
-* Officially given the title of "Expert Engineer" (E2), which distinguishes the top 1.5% technologists in the firm.
+* Recognized as a subject matter expert for Asia, contributing to the regional leadership team
+* Awarded the internal title of "Expert Engineer (E2)", a distinction given to the top 1.5% of technologists in the firm
 
 ### Triquesta
 
@@ -118,22 +132,25 @@ Singapore\
 Singapore
 2012 - 2014*
 
-**Tech Stack**:
-* Java
-* Javascript
+**Tech Stack:**
+* Java, Javascript
 
-**Role:** Java developer, then promoted to IT manager
+**Role:**
+Initially hired as a Java developer, later promoted to IT Manager. Contributed across the full software lifecycle while leading a growing engineering team.
 
-**Projects and Deliverables**
-* Built a commodities trading system, that is sold to global banks, such as Rabobank, Westpac, UniCredit.
+**Projects & Deliverables:**
+* Built a commodities trading and risk management system, sold to global financial institutions
+* Involved in the full product lifecycle: backend development, testing, release engineering, and production support
+* Acted as the technical lead during pre-sales engagements, presenting architecture and implementation plans to client stakeholders
 
-**Main Responsibilities**
-* Led a team of developers, reported to the CEO, and to client representatives.
-* Fully involved in development (Java), testing, release and production support.
-* Participated as the technical head during pre-sales meetings.
+**Responsibilities:**
+* Led a small team of developers, reporting directly to the CEO and client representatives
+* Represented the tech team in both internal strategy meetings and external client discussions
+* Ensured timely delivery of mission-critical features under tight constraints
 
-**Challenges**
-* This was a relatively small firm at the time, and we had to do lots of things that are sometimes out of our comfort zone - which was a great learning experience.
+**Challenges:**
+* Operated in a fast-paced startup-like environment, requiring flexibility across development, infrastructure, client interaction, and project management
+* Stepped outside traditional development roles to handle areas like production deployments, client demos, and cross-team coordination—an invaluable learning experience
 
 ### Credit Agricole CIB
 
@@ -141,14 +158,23 @@ Singapore
 Singapore\
 2011 - 2012*
 
-**Role:** Level 2 production support for all lines of business of the investment bank.
+**Role:**
+Level 2 production support for all business lines of the investment bank, ensuring stability and performance across a wide range of internal systems.
 
-**Main Responsibilities**
-* Automated most of manual production procedures and deployment, mostly in Bash, Perl, Python.
-* Acquired communication, negotiation / compromise skills, sense of urgency, experience on production monitoring technologies and best practices.
+**Responsibilities:**
+* Supported production environments across multiple business units, including trading, risk, and back office systems
+* Automated the majority of manual production procedures and deployments using Bash, Perl, and Python
+* Worked closely with developers, infrastructure teams, and business users to resolve incidents and deploy new releases
 
-**Challenges**
-* Huge learning curve, as we had to operate on many disparate technologies (various databases, programming langugages, scheduling systems, operating systems). It was a great learning experience from the operations side.
+Skills & Experience Gained:
+* Gained deep exposure to production monitoring technologies, incident management, and deployment best practices
+* Developed strong communication and negotiation skills by collaborating with diverse teams under time-critical situations
+* Built a solid sense of urgency and ownership, critical in supporting real-time banking operations
+
+Challenges:
+* Faced a steep learning curve while managing and troubleshooting systems built in varied technologies: multiple programming languages, databases, operating systems, and scheduling platforms
+* Learned to quickly adapt and operate effectively in a complex and high-stakes production environment
+Role: Level 2 production support for all business lines of the investment bank, ensuring stability and performance across a wide range of internal systems. Responsibilities * Supported production environments across multiple business units, including trading, risk, and back office systems * Automated the majority of manual production procedures and deployments using Bash, Perl, and Python * Worked closely with developers, infrastructure teams, and business users to resolve incidents and deploy new releases Skills & Experience Gained: * Gained deep exposure to production monitoring technologies, incident management, and deployment best practices * Developed strong communication and negotiation skills by collaborating with diverse teams under time-critical situations * Built a solid sense of urgency and ownership, critical in supporting real-time banking operations Challenges: * Faced a steep learning curve while managing and troubleshooting systems built in varied technologies: multiple programming languages, databases, operating systems, and scheduling platforms * Learned to quickly adapt and operate effectively in a complex and high-stakes production environment
 
 ### Société Nouvelle Electric Flux (SNEF)
 
@@ -156,15 +182,29 @@ Singapore\
 France\
 2009 - 2011*
 
-**Tech Stack**
-* Java
-* Javascript
+**Tech Stack:**
+* Java, Javascript
 
-**Projects and Deliverables**
-* Built an internal customer relationship management, and an inventory management system.
+**Projects & Deliverables:**
+* Developed an internal customer relationship management (CRM) system to streamline client interactions
+* Built an inventory management platform to track and manage company resources more efficiently
 
-**Main Responsibilities**
-* Development, testing, production releases and support.
+**Responsibilities:**
+* Handled full-cycle software development: design, development, testing, release, and production support
+* Collaborated with business users to gather requirements and iterate on system functionality
+* Delivered production-ready software in a live operational environment
+
+### Credit Agricole CIB
+
+*Back Office Intern\
+France\
+Jul 2008 - Sep 2008*
+
+### Credit Agricole CIB
+
+*Production Management - Access Control - Intern\
+France\
+Sep 2007 - Jan 2008*
 
 ## Education
 
