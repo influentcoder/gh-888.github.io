@@ -5,50 +5,65 @@ date:   2023-12-19 00:00:00 +0800
 categories: linux
 ---
 
-In this article, we will go through the re-installation of GRUB on a dual-boot setup.
-This morning, I was upgrading my BIOS through a Lenovo installer, from Windows.
+In this post, I'll walk through how to reinstall GRUB on a dual-boot system
+with Arch Linux and Windows. 
 
-This has kind of messed up my Grub setup, and when trying to boot on Grub, it just went to a Grub shell
-rather than presening me the usual boot options. Moreover, when trying `ls` on the Grub shell, it wasn't
-able to detect the filesystem for the Linux partitions, so it seemed quite bad.
+This morning, I upgraded my BIOS using a Lenovo installer from within Windows.
+That ended up messing with GRUB—on reboot, I was dropped into a GRUB shell
+instead of seeing the familiar boot options. Worse, GRUB couldn’t even detect
+the Linux filesystems using `ls`, which made things look pretty bad.
 
-My motivation to write this article, is for myself, to remember how to get out of this situation again if needs be,
-and to help other folks who might face the same issue.
+I’m writing this partly as a personal note in case it happens again, and partly
+to help anyone else who runs into the same problem.
 
-This article is mostly speaking about Arch Linux as this is the distribution I currently use, but some of the steps
-might be applicable to other distributions as well.
+I use Arch Linux, so the instructions are Arch-specific, but many of the steps
+should apply to other distributions too. My system uses UEFI and GPT; if you're
+using legacy BIOS, the steps will differ.
 
-My machine uses UEFI/GPT, and if you have an older BIOS, things might be a bit different.
+---
 
-# Ensure Windows is still bootable
+## Step 1: Make sure Windows is still bootable
 
-When rebooting the PC, at the very beginning, enter the BIOS (for my laptop model, I need to press F2).
+Reboot your computer and enter the BIOS setup (on my Lenovo laptop, this means
+pressing `F2` during startup).
 
-Make sure to change the BIOS order so that the Windows boot comes before grub.
+In the BIOS settings:
 
-Restart the PC, and hopefully Windows starts as usual. If that's not the case, you might need some more heavy lifting and at worst
-a factory reset.
+* Make sure the Windows boot entry comes *before* the GRUB entry in the boot
+order.
+* Save and reboot.
 
-Also in the BIOS, I suggest
+With luck, Windows should boot normally. If not, you may need to do more
+serious recovery steps—up to and including a factory reset.
 
-# Create a bootable USB stick with Arch Linux
+---
 
-Skip this step if you already have one.
+## Step 2: Create a bootable USB with Arch Linux
 
-[Download Arch Linux](https://archlinux.org/download/) as an ISO file.
+Skip this if you already have one.
 
-Then download [Rufus](https://rufus.ie/en/) or any other similar tool, to burn the ISO file on a USB stick.
+1. [Download the Arch ISO](https://archlinux.org/download/).
+2. Use [Rufus](https://rufus.ie/en/) or a similar tool to write the ISO to a
+   USB stick.
+3. Plug in the USB, reboot, and ensure the USB drive is first in the boot
+   order.
 
-Once done, plug the USB stick, reboot the PC, and ensure that the USB drive comes first in the boot order in the bios.
+You should now boot into a live Arch environment.
 
-You should then boot in an in-memory Arch Linux distribution as root.
+---
 
-# Identify the partitions
+## Step 3: Identify and mount your partitions
 
-Run `lsblk` first to check the partitions:
+First, list available partitions:
 
-```sh
-$ lsblk
+
+```bash
+lsblk
+```
+
+This might show something like:
+
+```
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
 nvme0n1     259:0    0 476.9G  0 disk
 ├─nvme0n1p1 259:1    0   260M  0 part
@@ -60,9 +75,13 @@ nvme0n1     259:0    0 476.9G  0 disk
 └─nvme0n1p7 259:7    0   7.7G  0 part
 ```
 
-There's a chance that nothing is mounted, so that's not very helpful.
+For more detail, run:
 
-Run `fdisk -l` and check the results. For me, it looks like something like this:
+```bash
+fdisk -l
+```
+
+This might show something like:
 
 ```
 Device             Start        End   Sectors   Size Type
@@ -77,47 +96,38 @@ Device             Start        End   Sectors   Size Type
 Partition table entries are not in disk order.
 ```
 
-This indicates that I have created two partitions for my Linux OS, namely `/dev/nvme0n1p5` and `/dev/nvme0n1p6`.
+You’ll need to figure out which partition contains your root (`/`) filesystem.
+In my case:
+* `/dev/nvme0n1p5` is root (`/`)
+* `/dev/nvme0n1p6` is `/home`
+* `/dev/nvme0n1p7` is `swap`
 
-`/dev/nvme0n1p7` is clearly identified as a swap partition, but for the other two, it might not be clear which one is what.
+Mount the root partition:
 
-I generally create two partitions, one for the root folder `/`, and one for `/home`, but depending on how you did it earlier,
-it might be different.
-
-Now, it's time to try to identify them.
-
-Let's try to mount the first partition:
-
-```sh
-$ mount /dev/nvme0n1p5 /mnt
+```bash
+mount /dev/nvme0n1p5 /mnt
+ls /mnt
 ```
 
-Then check the contents in `/mnt`:
+If you see typical root directories (`bin/`, `boot/`, `etc/`, etc.), you've got
+the right partition. Otherwise, unmount and try the other one.
 
-```sh
-$ ls /mnt
+If you have a separate `/home`, mount it too:
+
+```bash
+mount /dev/nvme0n1p6 /mnt/home
 ```
 
-If you see something that loks like `bin boot dev ... proc run tmp ...`, then that's probably the root of the filesystem, so all good.
+Enable swap:
 
-If you see the contents of something else (like `/home`), then unmount it for now until you find the root that you can mount on `/mnt`.
-
-If you have a partition for `/home`, you can mount it on `/mnt/home`:
-
-```sh
-$ mount /dev/nvme0n1p6 /mnt/home
+```bash
+swapon /dev/nvme0n1p7
 ```
 
-Then setup the swap partition:
+Verify with:
 
-```sh
-$ swapon /dev/nvme0n1p7
-```
-
-Finally, check with `lsblk` again that everything is in order:
-
-```sh
-$ lsblk
+```bash
+lsblk
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
 nvme0n1     259:0    0 476.9G  0 disk
 ├─nvme0n1p1 259:1    0   260M  0 part
@@ -129,50 +139,66 @@ nvme0n1     259:0    0 476.9G  0 disk
 └─nvme0n1p7 259:7    0   7.7G  0 part [SWAP]
 ```
 
-# Reinstall grub
+Look for correct mount points, like `/`, `/home`, and `[SWAP]`.
 
-The first step is to chroot:
+## Step 4: Reinstall GRUB
 
-```sh
-$ arch-chroot /mnt
-```
-
-If you are not using Arch Linux, check if your distro includes a similar helper for chroot, or just run `chroot` but
-you might have to manually mount a few things.
-
-Make sure to mount the EFI partition to `/boot/efi/`:
+First, chroot into your system:
 
 ```sh
-$ mount /dev/nvme0n1p1 /boot/efi/
+arch-chroot /mnt
 ```
 
-Then reinstall grub with:
+If you're using a non-Arch distro, use chroot directly but make sure to mount
+`proc`, `sys`, `dev`, and other required filesystems.
 
-```sh
-$ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+Next, mount the EFI partition (this is crucial for UEFI setups):
+
+```bash
+mount /dev/nvme0n1p1 /boot/efi/
 ```
 
-And then generate the grub config file (you might want to take a copy of the old one):
+Then reinstall GRUB:
 
-```sh
-$ grub-mkconfig -o /boot/grub/grub.cfg
+```bash
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 ```
 
-Once done, remove the USB stick, then reboot the PC.
+Generate the GRUB configuration:
 
-Now grub should be working as per normal. At this stage, there can be one caveat - it's possible that grub didn't detect the
-Windows partition while in chroot earlier.
-
-Just go to your Arch Linux, mount the EFI directory if it's not already done, and rerun the grub config generation:
-
-```sh
-$ grub-mkconfig -o /boot/grub/grub.cfg
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Now it should be able to detect the Windows partition.
+Exit the chroot environment, unmount the partitions (optional), and reboot:
 
-# Additional resources
+```bash
+exit
+reboot
+```
 
-[This video](https://www.youtube.com/watch?v=JRdYSGh-g3s&t=179s) helped me a lot to install Arch Linux with dual boot in the first place, and to troubleshoot this issue.
+Remove the USB stick, and hopefully you'll see the GRUB menu again.
 
-[The Arch wiki page on GRUB](https://wiki.archlinux.org/title/GRUB) is also very useful.
+---
+
+## If Windows doesn't show up in GRUB
+
+Sometimes GRUB won’t detect Windows while you're in the chroot environment. If
+that happens, boot into Arch normally, then:
+* Ensure the EFI partition is mounted:
+```bash
+mount /dev/nvme0n1p1 /boot/efi
+```
+* Regenerate the GRUB config:
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Now GRUB should detect both Arch and Windows.
+
+## Additional resources
+
+* [This video guide](https://www.youtube.com/watch?v=JRdYSGh-g3s&t=179s) helped
+me install Arch and fix dual-boot issues.
+* The [Arch wiki page on GRUB](https://wiki.archlinux.org/title/GRUB) is also
+very useful.
