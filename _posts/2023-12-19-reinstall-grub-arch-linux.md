@@ -202,3 +202,5 @@ Now GRUB should detect both Arch and Windows.
 me install Arch and fix dual-boot issues.
 * The [Arch wiki page on GRUB](https://wiki.archlinux.org/title/GRUB) is also
 very useful.
+* [This guide](https://forum.manjaro.org/t/root-tip-how-to-primer-on-handling-a-grub-package-update/154003)
+contains some useful tips for GRUB package updates.
