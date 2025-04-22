@@ -2,7 +2,7 @@
 layout: post
 title:  "Communicate, Communicate, Communicate: Lessons from a Platform Change Gone Wrong"
 date:   2025-04-20 00:00:00 +0800
-categories: linux fuse
+categories: other
 ---
 
 iAs engineers, we often focus on writing safe code, deploying with care, and
