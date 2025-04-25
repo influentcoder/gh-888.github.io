@@ -5,7 +5,7 @@ date:   2025-04-20 00:00:00 +0800
 categories: other
 ---
 
-iAs engineers, we often focus on writing safe code, deploying with care, and
+As engineers, we often focus on writing safe code, deploying with care, and
 measuring performance. But when we make changes to a core platform
 component—something that runs in every environment, hundreds of millions of
 times a day—there’s another responsibility that’s just as important:
