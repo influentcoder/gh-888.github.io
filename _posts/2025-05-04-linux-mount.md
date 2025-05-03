@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Understanding Mounts and Mount Namespaces in Linux"
-date:   2025-04-04 00:00:00 +0800
+date:   2025-05-04 00:00:00 +0800
 categories: other
 ---
 
